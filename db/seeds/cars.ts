@@ -11,8 +11,8 @@ export async function seed(knex: Knex): Promise<void> {
             finish_rent: new Date(),
             created_at: new Date(),
             updated_at: new Date(),
-            created_by: "Jepan",
-            updated_by: "Jepan",
+            created_by: "Bagus",
+            updated_by: "Bagus",
         },
     ]);
 }

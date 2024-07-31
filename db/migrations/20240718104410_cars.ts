@@ -10,8 +10,6 @@ export async function up(knex: Knex): Promise<void> {
         table.date("finish_rent").notNullable();
         table.timestamp("created_at").notNullable();
         table.timestamp("updated_at").notNullable();
-        table.string("created_by", 255).notNullable();
-        table.string("updated_by", 255).notNullable();
     });
 }
 
