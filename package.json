@@ -7,6 +7,7 @@
         "start": "node dist/src/index.js",
         "dev": "nodemon src/index.ts",
         "build": "tsc -p .",
+        "migrate": "ts-node -r tsconfig-paths/register ./node_modules/.bin/knex migrate:latest --knexfile knexfile.ts",
         "lint": "tslint -c tslint.json -p tsconfig.json --fix"
     },
     "author": "",
@@ -33,6 +34,7 @@
         "objection": "^3.1.4",
         "pg": "^8.11.5",
         "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
         "uuid": "^9.0.1"
     }
 }
