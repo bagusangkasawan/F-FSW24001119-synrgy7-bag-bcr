@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Challenge 7
 
 ## Admin
@@ -46,6 +45,3 @@ In a new terminal window or tab, navigate to the `client` folder and start the d
 cd client
 npm run dev
 ```
-=======
-# F-FSW24001119-synrgy7-bag-bcr
->>>>>>> 3e793c93e2f44e363bb7db840458d72942ba194e
