@@ -7,7 +7,6 @@
         "start": "node dist/src/index.js",
         "dev": "nodemon bin/www.ts",
         "build": "tsc -p .",
-        "seed:run": "cross-env DEBUG=knex:* knex seed:run --knexfile app/knexfile.ts --env development",
         "lint": "tslint -c tslint.json -p tsconfig.json --fix"
     },
     "author": "",
