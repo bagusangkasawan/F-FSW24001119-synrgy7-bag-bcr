@@ -13,7 +13,7 @@ export async function seed(knex: Knex): Promise<void> {
   // Insert data
   await knex('users').insert([
     {
-      id: 0,
+      id: 1,
       nama: 'Bagus',
       email: 'admin@gmail.com',
       password: hashedPassword,
