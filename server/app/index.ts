@@ -1,0 +1,39 @@
+import express, { urlencoded } from "express";
+import bodyParser from "body-parser";
+import carRouter from "../config/carRoutes";
+import knex from "knex";
+import { Model } from "objection";
+import userRoutes from "../config/userRoutes";
+import cors from "cors";
+
+const app = express();
+const swaggerUi = require("swagger-ui-express");
+const fs = require("fs");
+const YAML = require("yaml");
+const file = fs.readFileSync("./openapi.yaml", "utf8");
+const swaggerDocument = YAML.parse(file);
+
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+const knexInstance = knex({
+    client: "postgresql",
+    connection: {
+        database: "binar_challenge_5",
+        user: "postgres",
+        password: "postgres",
+    },
+});
+
+Model.knex(knexInstance);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use("/api/v1/cars", carRouter);
+app.use("/api/v1/users", userRoutes);
+
+module.exports = app;
