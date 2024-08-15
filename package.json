@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node dist/src/index.js",
+        "start": "node dist/app/index.js",
         "dev": "nodemon bin/www.ts",
         "build": "tsc -p .",
         "lint": "tslint -c tslint.json -p tsconfig.json --fix"

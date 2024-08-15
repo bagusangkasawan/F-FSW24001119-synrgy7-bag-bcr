@@ -46,7 +46,7 @@ export const checkAkses = (req: Request, res: Response, next: NextFunction) => {
     try {
         const decoded = jwt.verify(token, SECRET_KEY) as JwtPayload;
         if (decoded.role !== "superadmin" && decoded.role !== "admin") {
-            return res.status(403).json({ message: "Hanya superadmin dan yang bisa buat data car baru." });
+            return res.status(403).json({ message: "Hanya superadmin dan admin yang bisa buat data car baru." });
         }
         next();
     } catch (error) {
